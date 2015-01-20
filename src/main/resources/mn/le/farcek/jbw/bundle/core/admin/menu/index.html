@@ -1,0 +1,28 @@
+{% extends "bundle://admin/layout"%}
+{% import 'bundle://admin/menu' %}
+
+{% block importJs%}
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.4.0/bootstrap-table.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.js"></script>
+{% endblock%}
+{% block importCss%}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.4.0/bootstrap-table.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.css">
+{% endblock%}
+
+
+{%block menu%}
+{{adminMenu('core/menu')}}
+{%endblock%}
+
+{%block body%}
+<div class="panel panel-default">
+    <div class="panel-heading">Panel heading without title</div>
+    <div class="panel-body">               
+        
+            {{ dataTable | beanView | raw }}
+        
+    </div>
+</div>
+{%endblock%}
+
